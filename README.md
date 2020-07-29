@@ -1,2 +1,2 @@
 # nestagen.github.io
-Home Website
+Landing Page
