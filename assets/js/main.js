@@ -130,7 +130,7 @@
         $body.removeClass('no-overflow');
     });
     
-    $(".offcanvas-navigation--onepage ul li a").on('click', function(){
+    $(".mobile-menu-overlay__body ul li a").on('click', function(){
         $("#mobile-menu-overlay").removeClass("active");
         $body.removeClass('no-overflow');
     });
