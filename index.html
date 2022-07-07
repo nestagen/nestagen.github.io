@@ -1477,9 +1477,8 @@
                                     <p class="text">Reach out to the world’s most reliable IT services.</p>
                                 </div>
                                 <script>
-                                    let submitted = false;
                                 </script>
-                                <form class="contact-form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSd6T749RRmVftCQFAdu8PRjLjwQEWBi4wrbHwksuNRFHQotsA/formResponse"  target="hidden_iframe" onsubmit="submitted=true;">
+                                <form class="contact-form" name="gform" id="gform">
                                     <div class="contact-form__two">
                                         <div class="contact-input">
                                             <div class="contact-inner">
@@ -1510,13 +1509,20 @@
                                             <textarea name="entry.854431198" id="entry.854431198" required
                                                 placeholder="Please describe what you need."></textarea>
                                         </div>
+                                        <div class="contact-input">
+                                            <div class="contact-inner">
+                                                <div id="captcha"></div>
+                                            </div>
+                                            <div class="contact-inner">
+                                                <input name="captcha" type="text" placeholder="Enter Text from Left *" required>
+                                            </div>
+                                        </div>
                                         <div class="comment-submit-btn">
                                             <button class="ht-btn ht-btn-md" type="submit">Send message</button>
                                             <p class="form-messege-2"></p>
                                         </div>
                                     </div>
                                 </form>
-                                <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="if(submitted) {submitCheck()}"></iframe>
                             </div>
                         </div>
                     </div>
@@ -1650,10 +1656,6 @@
     <script src="assets/js/vendor/bootstrap.min.js"></script>
     <script src="assets/js/plugins/plugins.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-
-        function submitCheck() { $("#gform *").fadeOut(10), $("#gform").prepend("<p class='text-center'><strong>Thanks for the note.<br> We will get back to you as soon as we can.</strong></p>") } 
-    </script>
 
 
 </body>

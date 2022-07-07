@@ -1154,6 +1154,10 @@
         footerFixed();
     });
 
+    /* ====================================
+    =       All Animation For Fade Up      =
+    =======================================*/
+
 
     /* ====================================
     =       All Animation For Fade Up      =
@@ -1190,5 +1194,19 @@
     if($('#nasa-js').length){
         particlesJS("nasa-js", {"particles": {"number": {"value": 120,"density": {"enable": true,"value_area": 800}},"color": {"value": "#008000"},"shape": {"type": "circle","stroke": {"width": 0,"color": "#000000"},"polygon": {"nb_sides": 5},"image": {"src": "img/github.svg","width": 100,"height": 100}},"opacity": {"value": 1,"random": true,"anim": {"enable": true,"speed": 1,"opacity_min": 0,"sync": false}},"size": {"value": 3,"random": true,"anim": {"enable": false,"speed": 4,"size_min": 0.3,"sync": false}},"line_linked": {"enable": false,"distance": 150,"color": "#ffffff","opacity": 0.4,"width": 1},"move": {"enable": true,"speed": 1,"direction": "right","random": true,"straight": false,"out_mode": "out","bounce": false,"attract": {"enable": false,"rotateX": 600,"rotateY": 600}}},"interactivity": {"detect_on": "canvas","events": {"onhover": {"enable": false,"mode": "repulse"},"onclick": {"enable": true,"mode": "remove"},"resize": true},"modes": {"grab": {"distance": 400,"line_linked": {"opacity": 1}},"bubble": {"distance": 250,"size": 0,"duration": 2,"opacity": 0,"speed": 3},"repulse": {"distance": 400,"duration": 0.4},"push": {"particles_nb": 4},"remove": {"particles_nb": 2}}},"retina_detect": true});
     }
+
+    function cc(){document.getElementById("captcha").innerHTML="";for(var t="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%^&*",e=[],a=0;a<6;a++){var n=Math.floor(Math.random()*t.length+1);-1==e.indexOf(t[n])?e.push(t[n]):a--}var c=document.createElement("canvas");c.id="captcha",c.width=100,c.height=50;var o=c.getContext("2d");o.font="25px Georgia",o.strokeText(e.join(""),0,30),$.c=e.join(""),document.getElementById("captcha").appendChild(c)}cc();
+    
+    $("#gform").submit(function() {
+		let a = $(this).serialize(),
+			b = new URLSearchParams(a).get("captcha");
+		if (b === $.c) {
+			let c = `https://docs.google.com/forms/d/e/1FAIpQLSd6T749RRmVftCQFAdu8PRjLjwQEWBi4wrbHwksuNRFHQotsA/formResponse?${a}`;
+			fetch(c, {
+				mode: "no-cors"
+			}).then(a => $("#gform *").fadeOut(10), $("#gform").prepend("<p class='text-center'><strong>Thanks for the note.<br> We will get back to you as soon as we can.</strong></p>"))
+		}
+		return !1
+	});
 
 })(jQuery);
