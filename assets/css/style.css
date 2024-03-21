@@ -79,7 +79,7 @@ body {
   font-style: normal;
   font-weight: 400;
   visibility: visible;
-  font-family: "CerebriSans";
+  font-family: "sans-serif";
   color: #696969;
   position: relative;
   background-color: #ffffff;
@@ -91,7 +91,7 @@ body.no-overflow {
 
 h1, h2, h3, h4, h5, h6 {
   color: #333333;
-  font-family: "CerebriSans";
+  font-family: "sans-serif";
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0;
